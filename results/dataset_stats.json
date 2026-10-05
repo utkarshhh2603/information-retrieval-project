@@ -1,0 +1,12 @@
+{
+  "documents": 3633,
+  "test queries": 323,
+  "avg doc length (words)": 233.8,
+  "avg query length (words)": 3.3,
+  "avg relevant docs / query": 38.2,
+  "relevance judgments": 12334,
+  "grade distribution": {
+    "1": 11758,
+    "2": 576
+  }
+}

@@ -1,0 +1,11 @@
+| Model                                  | Group     |   P@10 |   Recall@100 |    MAP |   nDCG@10 |
+|:---------------------------------------|:----------|-------:|-------------:|-------:|----------:|
+| TF-IDF                                 | Core      | 0.2282 |       0.2470 | 0.1479 |    0.3167 |
+| BM25                                   | Core      | 0.2356 |       0.2476 | 0.1495 |    0.3253 |
+| Sentence Transformer                   | Core      | 0.2427 |       0.3149 | 0.1578 |    0.3190 |
+| BM25 + PRF expansion                   | Extension | 0.2635 |       0.3268 | 0.1826 |    0.3468 |
+| BM25 + Embedding expansion             | Extension | 0.2409 |       0.2693 | 0.1587 |    0.3304 |
+| Hybrid RRF (TF-IDF + BM25 + Dense)     | Core      | 0.2610 |       0.3100 | 0.1791 |    0.3517 |
+| Hybrid RRF (BM25 + Dense)              | Extension | 0.2576 |       0.3251 | 0.1842 |    0.3534 |
+| Hybrid RRF (TF-IDF + BM25+PRF + Dense) | Extension | 0.2666 |       0.3525 | 0.1941 |    0.3606 |
+| Hybrid RRF (TF-IDF + BM25+Emb + Dense) | Extension | 0.2585 |       0.3167 | 0.1804 |    0.3513 |

@@ -1,0 +1,7 @@
+{
+  "TF-IDF": 0.57,
+  "BM25": 0.57,
+  "Sentence Transformer": 12.13,
+  "BM25 + PRF expansion": 2.27,
+  "BM25 + Embedding expansion": 37.0
+}
