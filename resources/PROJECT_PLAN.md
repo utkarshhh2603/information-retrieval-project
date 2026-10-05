@@ -158,8 +158,17 @@ Every ranker exposes `search(query, k) -> [(doc_id, score)]`.
 - `data/` (the dataset and embedding caches) is not committed to GitHub.
 
 ## Final checklist
-- [ ] `python run_eval.py` runs from a fresh clone, and the metrics are in line with BEIR baselines
-- [ ] `streamlit run app.py` works for all models, and the expansion terms look sensible
-- [ ] Code, results and README are on GitHub
+- [x] `python run_eval.py` runs from a fresh clone, and the metrics are in line with BEIR baselines
+- [x] `streamlit run app.py` works for all models, and the expansion terms look sensible
+- [x] Code, results and README are on GitHub
 - [ ] Report written in your own words, similarity < 10%
 - [ ] Demo rehearsed
+
+## Status (2026-10-05)
+Phases 0–10 are built. Deliverables:
+- Code: `src/`, `run_eval.py`, `analyze.py`, `app.py`
+- Results: `results/metrics.md`, `results/analysis.md`, graphs in `results/`
+- Report draft: `report/IR_Report_NFCorpus.docx` (+ `.pdf`), regenerated with `node report/build_report.js`
+- Demo script and viva Q&A: `report/DEMO_SCRIPT.md`
+
+Remaining (yours): fill in your name, registration number and email, rewrite the report in your own words (similarity < 10%), and rehearse the demo.
