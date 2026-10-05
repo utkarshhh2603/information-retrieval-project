@@ -1,0 +1,9 @@
+ir_datasets
+nltk
+numpy
+pandas
+scikit-learn
+sentence-transformers
+torch
+matplotlib
+streamlit
