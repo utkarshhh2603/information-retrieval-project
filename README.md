@@ -88,7 +88,7 @@ query ─► preprocess ─┬─► TF-IDF  (inverted index) ──┐
 | `analyze.py` | Per-query win/loss analysis |
 | `app.py` | Streamlit interface |
 
-TF-IDF and BM25 are written from scratch on top of our own inverted index; no IR library is used for ranking. The dense model gets raw, unstemmed text, because transformers are trained on natural language.
+TF-IDF and BM25 are written from scratch on top of our own inverted index; no IR library is used for ranking. The dense model gets raw, unstemmed text,  because transformers are trained on natural language.
 
 ## Repository layout
 
