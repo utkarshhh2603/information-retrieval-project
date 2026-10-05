@@ -5,7 +5,7 @@ import pickle
 from collections import Counter, defaultdict
 
 from src.data import DATA_DIR, doc_text
-from src.preprocess import preprocess
+from src.preprocess import preprocess, stem, tokenize
 
 INDEX_PATH = os.path.join(DATA_DIR, "index.pkl")
 
@@ -17,15 +17,22 @@ class InvertedIndex:
         self.doc_len = {}  # doc_id -> number of tokens
         self.N = 0
         self.avgdl = 0.0
+        self.surface = {}  # stem -> most common original word (for display)
 
     def build(self, docs):
         postings = defaultdict(dict)
+        forms = defaultdict(Counter)  # stem -> surface word counts, for display
         for doc_id, doc in docs.items():
-            tokens = preprocess(doc_text(doc))
+            text = doc_text(doc)
+            tokens = preprocess(text)
             self.doc_len[doc_id] = len(tokens)
             for term, tf in Counter(tokens).items():
                 postings[term][doc_id] = tf
+            for word in tokenize(text):
+                for w in [word] + (word.split("-") if "-" in word else []):
+                    forms[stem(w)][w] += 1
         self.postings = dict(postings)
+        self.surface = {s: c.most_common(1)[0][0] for s, c in forms.items() if s in self.postings}
         self.df = {t: len(p) for t, p in self.postings.items()}
         self.N = len(docs)
         self.avgdl = sum(self.doc_len.values()) / self.N

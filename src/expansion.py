@@ -58,7 +58,7 @@ class PRFExpander:
         added = []
         for term, w in top:
             expanded[term] = self.weight * w / best
-            added.append((term, round(expanded[term], 3)))
+            added.append((self.index.surface.get(term, term), round(expanded[term], 3)))
         return expanded, added
 
 
